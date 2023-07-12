@@ -62,42 +62,18 @@ Idea to catch blazars:
 def pointing (x,y,x1,y1,x2,y2):
     n_ = (x-x1)*(y2-y1) + (y-y1)*(-x2+x1)
     return n_
+### Lot of files used for testing ###
+df = pd.read_csv() # 4FGL blazars
+                    # 4FGL Galactic sources
+                    #Novae
+                    #unclassified 4FGL
 
-#Import in known 4FGL Galactic sources
-#df = pd.read_csv("/Users/joffresd/Documents/Clemson/Research/FAVA/pyFAVA/historic_735_th_5p5/gal_flaring_notinbzcat_notblzin4fgl_combinedsrcs_noCrab1.csv")
-#df = pd.read_csv("/Users/joffresd/Documents/Clemson/Research/FAVA/pyFAVA/historic_735_th_5p5/pre_Cand_no_bzcat_4fgl3fglblzs_noCrab_2.csv")
+########################################
 
-#Gal test (instead of XM to closest one, will just do all of them) from 4FGL
-#df = pd.read_csv("/Users/joffresd/Documents/Clemson/Research/FAVA/gal_known_4fgl_dr3_eC_removed.csv")
+#insert file from FAVA here
+df = pd.read_csv('')
 
-#Novae
-#df = pd.read_csv('/Users/joffresd/Documents/Clemson/Research/FAVA/novae_xm_AW.csv')
-
-#Crab only
-#df = pd.read_csv("/Users/joffresd/Documents/Clemson/Research/FAVA/pyFAVA/historic_735_th_5p5/Candidates_6/crab_and_pulsar_flares.csv")
-
-#Threshold=5 result
-#df = pd.read_csv("/Users/joffresd/Documents/Clemson/Research/FAVA/pyFAVA/historic_735_th_5/final_flaring_noCrab.csv")
-
-#df = pd.read_csv("/Users/joffresd/Documents/Clemson/Research/FAVA/pyFAVA/historic_735_th_5/Useful_cross_matches/no_bz_4fgl_3fgl_blzs_noCrab.csv")
-
-wknum = 758
-#df = pd.read_csv("/Users/joffresd/Documents/Clemson/Research/FAVA/pyFAVA/Weekly_Analysis/" +str(wknum)+ "/fava_cuts_" +str(wknum) + ".csv")
-#df = pd.read_csv("/Users/joffresd/Documents/Clemson/Research/FAVA/pyFAVA/Weekly_Analysis/TC_xmes_week_" + str(wknum) +".csv")
-
-#From 4FGL unclassified
-#df = pd.read_csv("/Users/joffresd/Documents/Clemson/Research/FAVA/pyFAVA/historic_735_th_5/Assoc_post_proposal/unk.csv")
-
-
-#final candidates, check with more AW sources
-df = pd.read_csv("/Users/joffresd/Documents/Clemson/Research/FAVA/pyFAVA/historic_735_th_5/Paper_Cand_v2_10k/FAV_cand2.csv")
-
-
-#FINAL FAVA TEST WITH UL
-df = pd.read_csv("/Users/joffresd/Documents/Clemson/Research/FAVA/pyFAVA/historic_735_th_5/Paper_Cand_v2_10k/FAV_cand2.csv")
-
-#Dr. Hartmann Test - 10<b<20 (rest of criteria)
-#df = pd.read_csv("/Users/joffresd/Documents/Clemson/Research/FAVA/pyFAVA/historic_735_th_5/tests/DH2_postxm.csv")
+#Note: if want to check 4FGL sources uncomment code for ra, dec, and search_radius
 
 all_3_index = []
 all_3_ul = []
