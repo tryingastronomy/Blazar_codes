@@ -52,13 +52,8 @@ import bisect
 
 #Note: df is the initial flaring sources, v_result is the result of pulling AW srcs from Vizier
 
-'''
-Idea to catch blazars: 
-    I think we are catching them, but running into issues with just outside our own bubbles. 
-    So make list of 'assoc' values that correspond with these blazars, and then remove any remaining that have that assoc still. 
-'''
 
-
+#DEFINE FUNCTION FOR FUTURE USE
 def pointing (x,y,x1,y1,x2,y2):
     n_ = (x-x1)*(y2-y1) + (y-y1)*(-x2+x1)
     return n_
@@ -79,7 +74,7 @@ all_3_index = []
 all_3_ul = []
 blz_assoc_list = []
 
-
+#NOTE: can adjust ra, dec, and search_radius definitions for whatever data file you are looking at with
 for k in range(len(df['flareID'])): #len(df['flareID'])
     #k = 21
     #k=0
