@@ -21,3 +21,10 @@ Allows for output as .csv file.
 
 
 If used as a part of research, please cite Joffre et. al 2023.... (will fill in when published)
+
+
+FAVA_3D_4fgl_input_Redone.py is set up to run an arbitrary input file with RA, DEC, r95, that is not from FAVA
+
+
+
+
