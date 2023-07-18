@@ -877,6 +877,36 @@ Oddly, missing 1 of the novae - likely due to being in 3FGL g-ray uncert. .... N
 #Remove things we know are NOT blazars
 
 #removing things that have blazar colors, that the association IS KNOWN TO BE GALACTIC!!!
+#feel free to add or let me know of other sources
+for each in nodup_assoc:
+    if each == 'None':
+        nodup_assoc.remove(each)
+    elif each == 'LS I+61 303':
+        nodup_assoc.remove(each)
+    elif each == 'IC 443':
+        nodup_assoc.remove(each)
+    elif each == 'V407 Cyg':
+        nodup_assoc.remove(each)
+    elif each == 'Cyg X-3':
+        nodup_assoc.remove(each)
+    elif each == 'HESS J1303-631':
+        nodup_assoc.remove(each)
+    elif each == 'PSR B1259-63':
+        nodup_assoc.remove(each)
+    elif each == 'PSR J2032+4127':
+        nodup_assoc.remove(each)
+    elif each == 'PSR J0534+2200':
+        nodup_assoc.remove(each)
+    elif each == 'PSR J1826-1256':
+        nodup_assoc.remove(each)
+    elif each == 'NVSS J085238-312331':
+        nodup_assoc.remove(each)
+    elif each == 'PMN J1802-3940':
+        nodup_assoc.remove(each)
+    
+    
+'''
+#If not in the list you will have to run each of these one at a time to confirm (could check to see if there is anything in this list and then run)
 nodup_assoc.remove('None')
 nodup_assoc.remove('LS I+61 303')
 nodup_assoc.remove('IC 443')
@@ -894,6 +924,9 @@ nodup_assoc.remove('LAT PSR J1826-1256')
 nodup_assoc.remove('NVSS J085238-312331')
 #nodup_assoc.remove('PMN J1802-3940)
 #nodup_assoc.remove('')
+'''
+
+
 
 
 #are we interested in putting back in ones that failed and are known Galactic?
@@ -904,7 +937,7 @@ PMN86 J1802-394
 B2 2114+33
 '''
 
-'''
+
 
 #Want the rows that ARE NOT in nodup_assoc
 #Just say "if assoc by FAVA with known blazar at end, we remove" (could have done at beginning but )
@@ -918,7 +951,8 @@ no_prev_blz_candidates_fin.reset_index(inplace=True)
 
 #Uncomment below to get the flaring Gal. Non blazar candidates
 #no_prev_blz_candidates_fin.to_csv('')
-'''
+
+
 
 '''
 Final Notes: 
