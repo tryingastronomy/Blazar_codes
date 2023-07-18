@@ -25,6 +25,8 @@ If used as a part of research, please cite Joffre et. al 2023.... (will fill in 
 
 FAVA_3D_4fgl_input_Redone.py is set up to run an arbitrary input file with RA, DEC, r95, that is not from FAVA
 
+FAVA_3D_strip_results.py is set up to run with a FAVA input
+
 
 
 
