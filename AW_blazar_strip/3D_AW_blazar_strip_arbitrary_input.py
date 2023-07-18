@@ -1,22 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Mon Jul 17 14:08:20 2023
-
-@author: joffresd
-"""
-
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Dec  4 22:31:35 2022
-
-@author: joffresd
-"""
-
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
 Created on Sun Dec  4 16:21:08 2022
 
 @author: joffresd
@@ -72,54 +56,32 @@ def pointing (x,y,x1,y1,x2,y2):
     return n_
 
 #Known 4FGL Blazar Sources
-#df = pd.read_csv("/Users/joffresd/Documents/Clemson/Research/FAVA/4fgl_blazars.csv")
+#df = pd.read_csv("4fgl_blazars.csv")
 
 
-# known 4FGL Galactic sources
-#df = pd.read_csv("/Users/joffresd/Documents/Clemson/Research/FAVA/pyFAVA/historic_735_th_5p5/gal_flaring_notinbzcat_notblzin4fgl_combinedsrcs_noCrab1.csv")
-#df = pd.read_csv("/Users/joffresd/Documents/Clemson/Research/FAVA/pyFAVA/historic_735_th_5p5/pre_Cand_no_bzcat_4fgl3fglblzs_noCrab_2.csv")
 
 #Gal test (instead of XM to closest one, will just do all of them) from 4FGL
-#df = pd.read_csv("/Users/joffresd/Documents/Clemson/Research/FAVA/gal_known_4fgl_dr3_eC_removed.csv")
+#df = pd.read_csv("gal_known_4fgl_dr3_eC_removed.csv")
 
 #Novae
-#df = pd.read_csv('/Users/joffresd/Documents/Clemson/Research/FAVA/novae_xm_AW.csv')
-
-df=pd.read_csv('/Users/joffresd/Documents/Clemson/Research/FAVA/gcvs_nova_srcs.csv')
+df=pd.read_csv('gcvs_nova_srcs.csv')
 
 #Crab only
-#df = pd.read_csv("/Users/joffresd/Documents/Clemson/Research/FAVA/pyFAVA/historic_735_th_5p5/Candidates_6/crab_and_pulsar_flares.csv")
-
-#Threshold=5 result
-#df = pd.read_csv("/Users/joffresd/Documents/Clemson/Research/FAVA/pyFAVA/historic_735_th_5/final_flaring_noCrab.csv")
-
-#df = pd.read_csv("/Users/joffresd/Documents/Clemson/Research/FAVA/pyFAVA/historic_735_th_5/Useful_cross_matches/no_bz_4fgl_3fgl_blzs_noCrab.csv")
-
-wknum = 758
-#df = pd.read_csv("/Users/joffresd/Documents/Clemson/Research/FAVA/pyFAVA/Weekly_Analysis/" +str(wknum)+ "/fava_cuts_" +str(wknum) + ".csv")
-#df = pd.read_csv("/Users/joffresd/Documents/Clemson/Research/FAVA/pyFAVA/Weekly_Analysis/TC_xmes_week_" + str(wknum) +".csv")
+#df = pd.read_csv("crab_and_pulsar_flares.csv")
 
 #From 4FGL unclassified
-#df = pd.read_csv("/Users/joffresd/Documents/Clemson/Research/FAVA/pyFAVA/historic_735_th_5/Assoc_post_proposal/unk.csv")
+#df = pd.read_csv("unk.csv")
 
 
-#final candidates, check with more AW sources
-#df = pd.read_csv("/Users/joffresd/Documents/Clemson/Research/FAVA/pyFAVA/historic_735_th_5/Paper_Cand_v2_10k/FAV_cand2.csv")
 
 
-#FINAL FAVA TEST WITH UL
-#df = pd.read_csv("/Users/joffresd/Documents/Clemson/Research/FAVA/pyFAVA/historic_735_th_5/Paper_Cand_v2_10k/FAV_cand2.csv")
 
-#Dr. Hartmann Test - 10<b<20 (rest of criteria)
-#df = pd.read_csv("/Users/joffresd/Documents/Clemson/Research/FAVA/pyFAVA/historic_735_th_5/tests/DH2_postxm.csv")
+####### START OF MAIN BODY ########
+
 
 all_3_index = []
 all_3_ul = []
 blz_assoc_list = []
-
-
-
-
 
 for k in range(len(df)): #len(df['flareID']) # df['RAJ2000'][k]
     if k == 196:
@@ -922,33 +884,7 @@ hence, if already in the 99% area and been ruled out, will take out.
 
 Oddly, missing 1 of the novae - likely due to being in 3FGL g-ray uncert. .... Need to check still
 '''
-#nodup_assoc is the list of all the associated things that came up with AW colors like a blazar for some detection -> remove those 
-#we know are not blazars. 
-#ANOTHER TEST -> Novae catalog and where fall in blazar strip. 
-#Remove things we know are NOT blazars
 
-#removing things that have blazar colors, that the association IS KNOWN TO BE GALACTIC!!!
-'''
-nodup_assoc.remove('None')
-nodup_assoc.remove('LS I+61 303')
-nodup_assoc.remove('IC 443')
-nodup_assoc.remove('V407 Cyg') #means was previously caught - we should do a AW blazar strip test with novae as well. 
-nodup_assoc.remove('Cyg X-3')
-nodup_assoc.remove('LS I+61 303')
-nodup_assoc.remove('HESS J1303-631')
-nodup_assoc.remove('PSR B1259-63')
-nodup_assoc.remove('PSR J2032+4127')
-nodup_assoc.remove('LAT PSR J2032+4127')
-nodup_assoc.remove('PSR J0534+2200')
-nodup_assoc.remove('PSR J0248+6021')
-nodup_assoc.remove('LAT PSR J1826-1256')
-#nodup_assoc.remove('PSR J1826-1256')
-nodup_assoc.remove('NVSS J085238-312331')
-#nodup_assoc.remove('PMN J1802-3940)
-#nodup_assoc.remove('')
-'''
-
-#are we interested in putting back in ones that failed and are known Galactic?
 
 '''
 Notorious Blazars
@@ -956,7 +892,7 @@ PMN86 J1802-394
 B2 2114+33
 '''
 
-'''
+
 
 #Want the rows that ARE NOT in nodup_assoc
 #Just say "if assoc by FAVA with known blazar at end, we remove" (could have done at beginning but )
@@ -970,7 +906,7 @@ no_prev_blz_candidates_fin.reset_index(inplace=True)
 
 #Uncomment below to get the flaring Gal. Non blazar candidates
 #no_prev_blz_candidates_fin.to_csv('')
-'''
+
 
 '''
 Final Notes: 
@@ -998,7 +934,7 @@ candidates.to_csv('/Users/joffresd/Documents/Clemson/Research/FAVA/pyFAVA/histor
 
 '''
 #Testing in parts
-Blazars
+Blazars Identified as blazars by AW strip
 1. 0-500 : 
 blz1 = [0, 1, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 36, 37, 38, 39, 40, 41, 42, 44, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 63, 64, 65, 66, 67, 68, 69, 70, 71, 73, 74, 75, 76, 77, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 249, 250, 251, 252, 253, 254, 255, 257, 258, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 278, 279, 280, 281, 282, 283, 284, 285, 286, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 305, 306, 307, 308, 309, 310, 311, 312, 314, 315, 316, 317, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 348, 349, 350, 351, 352, 354, 355, 356, 357, 358, 359, 362, 364, 366, 368, 369, 371, 373, 374, 375, 378, 379, 382, 383, 384, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 400, 402, 403, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 417, 418, 419, 421, 423, 424, 425, 426, 427, 428, 429, 430, 432, 435, 436, 437, 438, 439, 440, 442, 443, 445, 446, 448, 449, 450, 451, 454, 457, 461, 462, 463, 464, 465, 467, 468, 469, 470, 471, 473, 475, 476, 477, 478, 479, 480, 481, 482, 483, 484, 486, 487, 490, 492, 494, 495, 496, 498, 500]
     
@@ -1021,265 +957,6 @@ not_blzs = df.loc[~df.index.isin(blz)]
 
 
 
-'''
-#Testing need to break into parts
-Galactic
-1. 0-300:  [2,
- 5,
- 7,
- 8,
- 9,
- 11,
- 14,
- 15,
- 17,
- 18,
- 19,
- 20,
- 21,
- 22,
- 24,
- 25,
- 26,
- 30,
- 31,
- 32,
- 33,
- 34,
- 35,
- 36,
- 37,
- 38,
- 40,
- 41,
- 42,
- 44,
- 45,
- 46,
- 47,
- 48,
- 49,
- 51,
- 54,
- 56,
- 57,
- 58,
- 59,
- 60,
- 64,
- 65,
- 66,
- 67,
- 69,
- 70,
- 71,
- 72,
- 73,
- 74,
- 76,
- 78,
- 81,
- 84,
- 89,
- 94,
- 99,
- 100,
- 107,
- 109,
- 111,
- 113,
- 115,
- 116,
- 117,
- 118,
- 120,
- 121,
- 124,
- 126,
- 128,
- 129,
- 130,
- 131,
- 134,
- 136,
- 137,
- 140,
- 142,
- 143,
- 147,
- 149,
- 151,
- 152,
- 154,
- 156,
- 158,
- 159,
- 167,
- 173,
- 178,
- 181,
- 184,
- 188,
- 196,
- 200,
- 207,
- 209,
- 216,
- 217,
- 218,
- 223,
- 232,
- 244,
- 245,
- 251,
- 266]
-
-
-2. 300-450
-[309,
- 310,
- 312,
- 313,
- 314,
- 316,
- 317,
- 318,
- 321,
- 322,
- 323,
- 325,
- 330,
- 334,
- 340,
- 341,
- 343,
- 344,
- 346,
- 349,
- 350,
- 351,
- 354,
- 355,
- 356,
- 357,
- 358,
- 359,
- 360,
- 361,
- 362,
- 363,
- 364,
- 365,
- 366,
- 367,
- 368,
- 369,
- 370,
- 372,
- 373,
- 374,
- 376,
- 377,
- 379,
- 380,
- 381,
- 385,
- 386,
- 387,
- 388,
- 391,
- 392,
- 393,
- 399,
- 403,
- 404,
- 405,
- 409,
- 412,
- 418,
- 420,
- 421,
- 425,
- 426,
- 427,
- 428,
- 429,
- 430,
- 431,
- 433,
- 436,
- 437,
- 438,
- 440,
- 443,
- 444,
- 445,
- 446,
- 447,
- 448]
-
-
-3. 450-539:
-[450,
- 451,
- 452,
- 453,
- 454,
- 455,
- 456,
- 457,
- 458,
- 459,
- 460,
- 461,
- 462,
- 464,
- 468,
- 470,
- 474,
- 480,
- 483,
- 485,
- 486,
- 487,
- 488,
- 489,
- 492,
- 495,
- 496,
- 497,
- 498,
- 499,
- 500,
- 501,
- 504,
- 507,
- 510,
- 512,
- 513,
- 516,
- 517,
- 518,
- 520,
- 521,
- 522,
- 523,
- 524,
- 526,
- 527,
- 529,
- 530,
- 531,
- 532,
- 533,
- 534,
- 537,
- 538]
-
-
-'''
-
-
 
 
 
@@ -1291,6 +968,7 @@ Galactic
 
 
 '''
+#For plotting to visualize some of the AW blazar strips
 #W2-W3 vs. W3-W4
 #P1-P2
 x1_2bll = [2.20, 2.72]
