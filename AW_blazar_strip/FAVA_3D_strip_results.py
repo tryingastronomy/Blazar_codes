@@ -955,6 +955,24 @@ no_prev_blz_candidates_fin.reset_index(inplace=True)
 
 
 '''
+Should probably have this output the AllWISE sources that do fall in all 3
+'''
+print('AW sources that Fall in all 3 blazar strips' + '\n')
+print('Not using upper limits')
+
+print(v_result[in3]['AllWISE'])
+# we can also save this to a csv file
+#uncomment below
+aw_srcs_with_blz_colors = v_result[in3]
+#aw_src_with_blz_colors.to_csv('AW_srcs_with_blz_colors.csv')
+print('Using UL')
+try:
+    print(t_ul[fin_ul_3]['AllWISE'])
+except NameError:
+    print('No UL AW srcs')
+
+
+'''
 Final Notes: 
     this is fine since we have FAVA to take advantage of them using their own r_99 + r_sys (0.1deg) to do the associations. 
     Will need to discuss this down the road, since we are doing intervention to clean it up.
