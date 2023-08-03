@@ -866,6 +866,29 @@ df_list = list(df.index)
 df_not_blazars = list(set(df_list).difference(blazar_srcs_AW_3d))
 
 
+'''
+Should probably have this output the AllWISE sources that do fall in all 3
+'''
+print('AW sources that Fall in all 3 blazar strips' + '\n')
+print('Not using upper limits')
+
+print(v_result[in3]['AllWISE'])
+# we can also save this to a csv file
+#uncomment below
+aw_srcs_with_blz_colors = v_result[in3]
+#aw_src_with_blz_colors.to_csv('AW_srcs_with_blz_colors.csv')
+print('Using UL')
+try:
+    print(t_ul[fin_ul_3]['AllWISE'])
+except NameError:
+    print('No UL AW srcs')
+    
+
+
+
+
+
+
 #Now, we will get rid of any remaining flare that has an 'assoc' that has already been determined by a different flaring
 #Event to be a blazar by AW colors. 
 
