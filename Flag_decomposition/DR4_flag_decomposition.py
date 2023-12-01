@@ -28,8 +28,9 @@ df = pd.read_csv('4fgl-DR4.csv')
 
 flags = df['Flags']
 #Add 2 new columns 
-df['Flag_Decomposition'] = '' #will literally write out flag for easy readability
 df['flag_decomp_number'] = '' #give number of the flag for easy counting/comparision to Table4. 
+df['Flag_Decomposition'] = '' #will literally write out flag for easy readability
+
 
 
 #Thanks to nullptr for this function as provided here: https://stackoverflow.com/questions/30226094/how-do-i-decompose-a-number-into-powers-of-2
