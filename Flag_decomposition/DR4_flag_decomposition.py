@@ -11,22 +11,26 @@ Flag decomposition for 4FGL-DR4, DR3
 
 #GOAL: Want to easily input a file, and then output the types of flags for each of the sources in a new column (according to DR4)
 
+#Notes
+#1 & number -> if even gives 0, if odd gives 1
+
+# x<<y  means x*2**y
+#so i<<= 1 means i = i + 1*2**1
+#i += 1 -> i = i + 1
+
 #Imports
 import pandas as pd
 import numpy as np
 
 
 #input .csv file of interest
-df = pd.read_csv('')
-
+df = pd.read_csv('4fgl-DR4.csv')
 
 flags = df['Flags']
+#Add 2 new columns 
+df['Flag_Decomposition'] = '' #will literally write out flag for easy readability
+df['flag_decomp_number'] = '' #give number of the flag for easy counting/comparision to Table4. 
 
-#1 & number -> if even gives 0, if odd gives 1
-
-# x<<y  means x*2**y
-#so i<<= 1 means i = i + 1*2**1
-#i += 1 -> i = i + 1
 
 #Thanks to nullptr for this function as provided here: https://stackoverflow.com/questions/30226094/how-do-i-decompose-a-number-into-powers-of-2
 def decomp(x):
@@ -110,47 +114,40 @@ for j in range(len(flags)):
         df.loc[j,'Flag_Decomposition'] += 'Soft Galactic Unassociated (SGU)'
         df.loc[j,'flag_decomp_number'] += '14,'
 
-    
+#Save the newly updated .csv file
+df.to_csv('4FGLdr4_flags_decomp.csv') #example with DR4 input
+
+
 #Break up (and possible save as .csv files) for all sources containing one of the individual flags listed. 
 df1 = df[df['flag_decomp_number'].str.contains('1,')]
 print(len(df1))
 
-
 df2 = df[df['flag_decomp_number'].str.contains('2,')]
 print(len(df2))
-
 
 df3 = df[df['flag_decomp_number'].str.contains('3,')]
 print(len(df3))
 
-
 df4 = df[df['flag_decomp_number'].str.contains('4,')]
 print(len(df4))
-
 
 df5 = df[df['flag_decomp_number'].str.contains('5,')]
 print(len(df5))
 
-
 df6 = df[df['flag_decomp_number'].str.contains('6,')]
 print(len(df6))
-
 
 df9 = df[df['flag_decomp_number'].str.contains('9,')]
 print(len(df9))
 
-
 df10 = df[df['flag_decomp_number'].str.contains('10,')]
 print(len(df10))
-
 
 df12 = df[df['flag_decomp_number'].str.contains('12,')]
 print(len(df12))
 
-
 df13 = df[df['flag_decomp_number'].str.contains('13,')]
 print(len(df13))
-
 
 df14 = df[df['flag_decomp_number'].str.contains('14,')]
 print(len(df14))
