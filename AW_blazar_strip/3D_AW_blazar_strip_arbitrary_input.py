@@ -115,11 +115,6 @@ for k in range(len(df)): #len(df['flareID']) # df['RAJ2000'][k]
     
     #Need to be able to detect upper limits
     #This can be done by checking the e_mag field, if nan then it will be an UL - see later
-    '''
-    5/23/23 Note
-    IMPORTANT! Need to update code - I did UL with larger number as UL - WRONG
-    For magnitudes, an UL will be the SMALLEST value
-    '''
     
     
     
