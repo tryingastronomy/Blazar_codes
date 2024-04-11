@@ -20,7 +20,7 @@ We also make sure NOT to remove well-known Galactic sources if their association
 Allows for output as .csv file. 
 
 
-If used as a part of research, please cite Joffre et. al 2023.... (will fill in when published)
+If used as a part of research, please cite https://arxiv.org/abs/2402.07994 (until a Zenodo doi is established) if this code is used. 
 
 
 3D_AW_blazar_strip_arbitrary_input.py is set up to run an arbitrary input file with RA, DEC, r95, that is not from FAVA
